@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <p class="sidebar-kicker">Healthcare Assistant</p>
+            <h1>Consultations</h1>
+            <p class="sidebar-subtitle">Track symptom chats and review the assistant's guidance.</p>
+            <button id="new-convo-btn">+ New Conversation</button>
+        </div>
+        <ul class="conversation-list">
+            {% comment %} <li class="conversation-item" data-convo-id="1">
+                <h3>Conversation 1</h3>
+            </li> {% endcomment %}
+              
+        </ul>
+    </div>
+
+
+    <div class="main">
+        {% comment %} <div class="chat-header">
+            <div>
+                <p class="chat-kicker">AI Symptom Support</p>
+                <h2>Describe how you're feeling</h2>
+            </div>
+            <p class="chat-disclaimer">This assistant offers guidance, not a diagnosis. Seek urgent care if symptoms feel severe.</p>
+        </div> {% endcomment %}
+
+        <div class="reply" id="replyBox">
+            <div class="empty-state" id="emptyState">
+                <div class="empty-state-badge">Safe Triage Flow</div>
+                <h3>Start a consultation</h3>
+                <p>Share symptoms, duration, and anything that makes them better or worse. Replies will be organized into answer, confidence, suggestion, and emergency status.</p>
+            </div>
+
+
+            {% comment %} <div class="message user">
+                i take a napa 
+                <span class="time">10:30 AM</span>
+
+            </div>
+            <div class="message bot">
+                next reply
+            </div> {% endcomment %}
+
+        </div>
+        <div class="chat">
+            <div class="chat-box">
+                <input type="text" id="messageInput" placeholder="Example: I have chest pain and shortness of breath since morning">
+                <button type="button" onclick="sendMessage()">Send</button>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+    <script src="{% static 'js/home.js' %}"></script>
+
+
+</html>
